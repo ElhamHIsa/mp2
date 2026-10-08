@@ -1,0 +1,159 @@
+.detail {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  grid-template-areas:
+    'back back'
+    'frame body'
+    'pager pager';
+  gap: 28px 40px;
+  align-items: start;
+}
+
+.back {
+  grid-area: back;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.frame {
+  grid-area: frame;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.body {
+  grid-area: body;
+}
+
+.title {
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 0 0 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--paper);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.description {
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.keywords li {
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.pager {
+  grid-area: pager;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.pager button {
+  padding: 11px 22px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.pager button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.position {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.status {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 40px 0 16px;
+}
+
+@media (max-width: 860px) {
+  .detail {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'back'
+      'frame'
+      'body'
+      'pager';
+  }
+}
