@@ -40,7 +40,7 @@ export default function ListView() {
     <section>
       <h1 className={styles.heading}>Search the archive</h1>
       <p className={styles.lede}>
-        Query NASA&rsquo;s public image library, then narrow and sort what comes back.
+        Query NASA&rsquo;s public image library
       </p>
 
       <div className={styles.controls}>
